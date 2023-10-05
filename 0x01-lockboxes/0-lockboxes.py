@@ -5,12 +5,15 @@ unlocked
 
 
 def canUnlockAll(boxes):
-    unlocked = set([0])
-    keys = set()
+    n = len(boxes)
+    sboxes = set([0])
+    uboxes = set(boxes[0]).difference(set([0]))
 
-    for i, box in enumerate(boxes):
-        keys.update(box)
-        if i in unlocked:
-            unlocked.update(box)
-
-    return len(unlocked) == len(boxes)
+    while len(uboxes) > 0:
+        boxIdx = uboxes.pop()
+        if not boxIdx or boxIdx >= n or boxIdx < 0:
+            continue
+        if boxIdx not in sboxes:
+            uboxes = uboxes.union(boxes[boxIdx])
+            sboxes.add(boxIdx)
+    return len(sboxes) == n
