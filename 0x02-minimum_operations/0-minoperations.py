@@ -2,7 +2,7 @@
 """Minimum opreation """
 
 
-def minOperations(n):
+def minOperations(n: int) -> int:
     """minimun ops
     """
     ops_count = 0
