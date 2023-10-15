@@ -5,6 +5,9 @@
 def minOperations(n: int) -> int:
     """minimun ops
     """
+    if not isinstance(n, int):
+        return 0
+
     ops_count = 0
     clipboard = 0
     done = 1
