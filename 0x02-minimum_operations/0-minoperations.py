@@ -2,7 +2,7 @@
 """Minimum opreation """
 
 
-def minOperations(n: int) -> int:
+def minOperations(n):
     """minimun ops
     """
     if not isinstance(n, int):
